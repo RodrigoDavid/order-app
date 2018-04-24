@@ -1,0 +1,12 @@
+nav {
+  background: #e4e8e8;
+}
+nav a {
+  color: #0c121c;
+}
+
+nav span {
+  position: absolute;
+  right: 24px;
+  top: 8px;
+}
