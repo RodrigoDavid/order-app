@@ -1,0 +1,86 @@
+.container {
+  background: url("https://www.landrover.com/Images/lr_heritage_range_rover_classic_1970_20_desktop_1600x900_281-345745_1600x900.jpg?v=16");
+  position: absolute;
+  background-size: cover;
+  bottom: 24px;
+  top: 64px;
+  right: 24px;
+  left: 24px;
+  max-width: 1320px;
+}
+
+.history-container {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.6);
+  width: 400px;
+  left: 12px;
+  top: 12px;
+  bottom: 24px;
+  padding: 12px;
+}
+
+.history-container h1 {
+  font-size: 2em;
+  padding-bottom: 8px;
+}
+
+.history-container .search-order {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+}
+
+.search-order input[type=search] {
+  width: 100%;
+  max-width: 370px;
+  border-radius: 0;
+  border: none;
+}
+
+.history-container ul:not(.status-history) {
+  position: absolute;
+  list-style: none;
+  top: 124px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 12px 0 12px 12px;
+  overflow: auto;
+  box-shadow: inset 0px 1px 2px rgba(0,0,0,.08);
+}
+
+
+
+ul li .order {
+  background: rgba(255, 255, 255, 0.87);
+  padding: 8px;
+  margin: 0 0 12px;
+}
+
+.header {
+  height: 100px;
+}
+
+.status-history {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.status-history h1 {
+  font-size: 1em;
+  margin-bottom: 0;
+  font-weight: 500;
+}
+
+strong {
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.order span {
+  /*background-color: #0c121c;*/
+  /*padding: 4px;*/
+  /*color: #fff;*/
+}

@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { OrderComponent } from './order/order.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
+import { OrderHistoryComponent } from './order-history/order-history.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     OrderComponent,
     NavbarComponent,
-    HomeComponent
+    HomeComponent,
+    OrderHistoryComponent
   ],
   imports: [
     BrowserModule,
@@ -22,6 +24,9 @@ import { HomeComponent } from './home/home.component';
       },
       {
         path: 'orders', component: OrderComponent
+      },
+      {
+        path: 'order-history', component: OrderHistoryComponent
       }
     ])
   ],
