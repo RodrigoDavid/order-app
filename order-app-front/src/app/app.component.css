@@ -1,0 +1,54 @@
+nav {
+  background: #e4e8e8;
+}
+nav a {
+  color: #0c121c;
+}
+
+nav span {
+  position: absolute;
+  right: 24px;
+  top: 8px;
+}
+
+.bgwrapper {
+  position: absolute;
+  background: url("https://landrover.ssl.cdn.sdlmedia.com/636469708058582306MF.jpg?v=1#desktop_Full_Frame_Carousel_1600x900");
+  background-size: cover;
+  bottom: 24px;
+  top: 54px;
+  left: 24px;
+  right: 24px;
+}
+.order {
+  position: absolute;
+  padding: 12px;
+  display: block;
+  text-align: center;
+  left: 16px;
+  bottom: 16px;
+  width: 360px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 90%;
+}
+
+.order span {
+  font-family: 'Tajawal', sans-serif;
+  font-size: 1.6em;
+}
+
+.order a {
+  display: inline-block;
+  padding: 8px;
+  background: #0c121c;
+  color: #e4e8e8;
+  width: 55%;
+  opacity: 1;
+  transition: opacity .300s;
+}
+
+.order a:hover {
+  text-decoration: none;
+  opacity: .87;
+}
