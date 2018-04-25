@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-order-history',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderHistoryComponent implements OnInit {
 
-  constructor() { }
+  readonly ROOT_URL = 'http://localhost:3000';
+
+  orders: any;
+
+  constructor(private http: HttpClient) {
+  }
 
   ngOnInit() {
+    this.orders = this.http.get(this.ROOT_URL + '/orders');
   }
+
 
 }

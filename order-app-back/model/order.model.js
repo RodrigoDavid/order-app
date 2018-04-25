@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const oldStatus = new Schema({date: Date, status: String});
+// const oldStatus = new Schema({date: Date, status: String});
 
 // create order Schema & model
 const OrderSchema = new Schema({
@@ -10,7 +10,7 @@ const OrderSchema = new Schema({
         required: [true, 'Order ID is required']
     },
     product: {
-        type: String,
+        type: [String],
         required: [true, 'Product name is required']
     },
     currentStatus: {
@@ -19,7 +19,7 @@ const OrderSchema = new Schema({
     },
     statusHistory: {
         list: {
-            type: [oldStatus],
+            type: [],
             required: false
         }
     }

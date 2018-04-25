@@ -1,0 +1,95 @@
+.container {
+  background: url("http://www.stratstone.com/images/1249413/1249434/1249872/land-rover-cardiff.jpg");
+  /*background-color: #f2edea;*/
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  background-size: cover;
+  bottom: 24px;
+  top: 64px;
+  right: 24px;
+  left: 24px;
+  max-width: 1320px;
+}
+
+.pending {
+  position: absolute;
+  background: rgba(255, 255, 255, .6);
+  width: 47%;
+  left: 12px;
+  top: 12px;
+  bottom: 24px;
+  padding: 12px;
+}
+
+.pending ul,
+.delivered ul {
+  position: absolute;
+  list-style: none;
+  top: 124px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0;
+  padding: 12px 0 12px 12px;
+  overflow: auto;
+  box-shadow: inset 0px 1px 2px rgba(0, 0, 0, .08);
+}
+
+.header {
+  height: 100px;
+}
+
+.header h1 {
+  font-size: 2em;
+  padding-bottom: 8px;
+}
+
+.header .search-order {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+}
+
+.header input[type=search] {
+  width: 100%;
+  border-radius: 0;
+  border: none;
+  background-color: #f8f9f9;
+}
+
+.header input[type=search]:focus {
+  box-shadow: none;
+}
+
+select {
+  margin-top: 8px;
+  width: 97%;
+}
+
+select:focus {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.pending ul li,
+.delivered ul li {
+  background: rgba(249,249,249, .6);
+  box-sizing: border-box;
+}
+
+.pending ul li,
+.delivered ul li {
+  padding: 8px;
+  margin-bottom: 12px;
+}
+
+.delivered {
+  position: absolute;
+  background: rgba(255, 255, 255, .6);
+  right: 12px;
+  width: 47%;
+  top: 12px;
+  bottom: 24px;
+  padding: 12px;
+}

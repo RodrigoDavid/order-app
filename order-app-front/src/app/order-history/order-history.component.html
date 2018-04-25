@@ -5,79 +5,21 @@
     <div class="header">
       <h1>Check your orders</h1>
       <div class="search-order form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search order by ID" aria-label="Search">
+        <input class="form-control mr-sm-2" type="search" [(ngModel)]="searchId" placeholder="Search order by ID"
+               aria-label="Search"/>
       </div>
     </div>
     <ul>
-      <li>
+      <li *ngFor="let order of orders | async | filter:searchId">
         <div class="order">
-          <p><strong>Order ID</strong>: 146231</p>
-          <p><strong>Product</strong>: RANGE ROVER EVOQUE CONVERTIBLE</p>
-          <p><strong>Current status</strong>: <span>Processing</span></p>
+          <p><strong>Order ID</strong>: {{order.id}}</p>
+          <p *ngFor="let product of order.product"><strong>Product</strong>: {{product}}</p>
+          <p><strong>Current status</strong>: <span>{{order.currentStatus}}</span></p>
           <ul class="status-history">
-            <h1>Status history</h1>
-            <li>Separated 24/06/18 12:53</li>
-            <li>Sent 26/06/18 13:47</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="order">
-          <p><strong>Order ID</strong>: 146231</p>
-          <p><strong>Product</strong>: RANGE ROVER EVOQUE CONVERTIBLE</p>
-          <p><strong>Current status</strong>: <span>Processing</span></p>
-          <ul class="status-history">
-            <h1>Status history</h1>
-            <li>Separated 24/06/18 12:53</li>
-            <li>Sent 26/06/18 13:47</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="order">
-          <p><strong>Order ID</strong>: 146231</p>
-          <p><strong>Product</strong>: RANGE ROVER EVOQUE CONVERTIBLE</p>
-          <p><strong>Current status</strong>: <span>Processing</span></p>
-          <ul class="status-history">
-            <h1>Status history</h1>
-            <li>Separated 24/06/18 12:53</li>
-            <li>Sent 26/06/18 13:47</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="order">
-          <p><strong>Order ID</strong>: 146231</p>
-          <p><strong>Product</strong>: RANGE ROVER EVOQUE CONVERTIBLE</p>
-          <p><strong>Current status</strong>: <span>Processing</span></p>
-          <ul class="status-history">
-            <h1>Status history</h1>
-            <li>Separated 24/06/18 12:53</li>
-            <li>Sent 26/06/18 13:47</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="order">
-          <p><strong>Order ID</strong>: 146231</p>
-          <p><strong>Product</strong>: RANGE ROVER EVOQUE CONVERTIBLE</p>
-          <p><strong>Current status</strong>: <span>Processing</span></p>
-          <ul class="status-history">
-            <h1>Status history</h1>
-            <li>Separated 24/06/18 12:53</li>
-            <li>Sent 26/06/18 13:47</li>
-          </ul>
-        </div>
-      </li>
-      <li>
-        <div class="order">
-          <p><strong>Order ID</strong>: 146231</p>
-          <p><strong>Product</strong>: RANGE ROVER EVOQUE CONVERTIBLE</p>
-          <p><strong>Current status</strong>: <span>Processing</span></p>
-          <ul class="status-history">
-            <h1>Status history</h1>
-            <li>Separated 24/06/18 12:53</li>
-            <li>Sent 26/06/18 13:47</li>
+            <h1 [hidden]="order.statusHistory.list.length == 0">Status history</h1>
+            <li *ngFor="let item of order.statusHistory.list">
+              {{item.status.toString()}} - {{item.date | date:'short'}}
+            </li>
           </ul>
         </div>
       </li>
@@ -94,5 +36,9 @@
         </div>
       </li>
     </ul>
+
+    <!--<div *ngFor="let order of orders | async">-->
+    <!--{{order | json}}-->
+    <!--</div>-->
   </div>
 </div>

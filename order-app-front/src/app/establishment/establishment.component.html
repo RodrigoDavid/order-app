@@ -1,0 +1,52 @@
+<app-navbar></app-navbar>
+
+<div class="container">
+  <div class="orders">
+    <div class="pending">
+      <div class="header">
+        <h1>Pending orders</h1>
+        <div class="search-order form-inline">
+          <input class="form-control mr-sm-2" [(ngModel)]="searchId" type="search" placeholder="Search order by ID"
+                 aria-label="Search">
+        </div>
+      </div>
+      <ul>
+        <li *ngFor="let order of orders | async | filter:searchId | filterStatus:'notDelivered'">
+          <div class="order">
+            <p><strong>Order ID</strong>: {{order.id}}</p>
+            <p *ngFor="let product of order.product"><strong>Product</strong>: {{product}}</p>
+            <p>
+              <strong>Current status</strong>: {{order.currentStatus}}
+              <select (change)="changeOrderStatus(order.id, $event)" class="form-control">
+                <option>Processing</option>
+                <option>Separated</option>
+                <option>Sent</option>
+                <option>Delivered</option>
+              </select>
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="delivered">
+      <div class="header">
+        <h1>Delivered orders</h1>
+        <div class="search-order form-inline">
+          <input [(ngModel)]="searchDelivered" class="form-control mr-sm-2" type="search" placeholder="Search order by ID"
+                 aria-label="Search">
+        </div>
+      </div>
+      <ul>
+        <li *ngFor="let order of orders | async | filter:searchDelivered | filterStatus:'delivered'">
+          <div class="order">
+            <p><strong>Order ID</strong>: {{order.id}}</p>
+            <p *ngFor="let product of order.product"><strong>Product</strong>: {{product}}</p>
+            <p>
+              <strong>Current status</strong>: {{order.currentStatus}}
+            </p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

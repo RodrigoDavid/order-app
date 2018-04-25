@@ -37,6 +37,10 @@
   border: none;
 }
 
+.search-order input[type=search]:focus {
+  box-shadow: none;
+}
+
 .history-container ul:not(.status-history) {
   position: absolute;
   list-style: none;
@@ -84,3 +88,4 @@ strong {
   /*padding: 4px;*/
   /*color: #fff;*/
 }
+

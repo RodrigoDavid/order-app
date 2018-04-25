@@ -2,32 +2,35 @@
 
 <div class="container">
   <div class="make-order">
-    <form>
+    <div>
+      <div [hidden]="!createdMessage">
+        <h3><span class="badge badge-primary">Order created!</span></h3>
+      </div>
       <h1>Make your order</h1>
       <ul>
-        <h2>
+        <h2 [hidden]="cart.length == 0">
           Products selected
         </h2>
-        <li>
-          RANGE ROVER EVOQUE
+        <li [hidden]="cart.length != 0">
+          Select a product to make your order
         </li>
-        <li>
-          RANGE ROVER EVOQUE
+        <li *ngFor="let product of cart">
+          {{product}}
         </li>
       </ul>
-      <button class="btn btn-primary">ORDER NOW</button>
-    </form>
+      <button [disabled]="cart.length == 0" class="btn btn-primary" (click)="createOrder()">ORDER NOW</button>
+    </div>
   </div>
   <div class="product-container">
     <div class="product">
       <img src="https://assets.config.landrover.com/lr/jdx/l538/k18/whlbse_l538_k18_a-5door_gl.png?v=3i1gt">
-      <h1>RANGE ROVER EVOQUE</h1>
-      <a href="">SELECT</a>
+      <h1>{{product_1}}</h1>
+      <button class="btn btn-primary select-order" [disabled]="" (click)="addToOrder(product_1)">SELECT</button>
     </div>
     <div class="product">
       <img src="https://assets.config.landrover.com/lr/jdx/l538/k18/whlbse_l538_k18_a-convertible_gl.png?v=3i1gt">
-      <h1>RANGE ROVER EVOQUE CONVERTIBLE</h1>
-      <a href="">SELECT</a>
+      <h1>{{product_2}}</h1>
+      <button class="btn btn-primary select-order" (click)="addToOrder(product_2)">SELECT</button>
     </div>
   </div>
 </div>

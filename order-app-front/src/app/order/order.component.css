@@ -72,7 +72,7 @@ h2 {
   top: 0;
 }
 
-.product a {
+.product .select-order {
   display: inline-block;
   position: absolute;
   text-align: center;
@@ -87,7 +87,7 @@ h2 {
   transition: opacity .300s;
 }
 
-.product a:hover {
+.product .select-order:hover:not(:disabled) {
   text-decoration: none;
   opacity: .87;
 }
@@ -101,7 +101,15 @@ h2 {
   transition: opacity .300s;
 }
 
-.btn.btn-primary:hover {
+.btn.btn-primary:focus,
+.btn.btn-primary:active {
+  box-shadow: none;
+  outline: none;
+  border: none;
+  background: #0c121c;
+}
+
+.btn.btn-primary:hover:not(:disabled) {
   text-decoration: none;
   opacity: .87;
 }
