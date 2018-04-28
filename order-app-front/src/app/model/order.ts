@@ -2,6 +2,9 @@ export class Order {
   id: number;
   product: string[];
   currentStatus?: string;
-  statusHistory?: any[];
+  statusHistory?: list;
 }
 
+class list {
+  list: any[];
+}
